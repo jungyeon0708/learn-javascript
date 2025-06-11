@@ -50,27 +50,71 @@ console.log(2, 마이네임);
 
 // console.log(2, 마이네임);
 
-function logger(logmessage) {
-  console.log("로그메세지", logmessage);
+// 함수를 만드는 2가지 방법      Add commentMore actions
+// --------------------------------------------------------------------------
+// 1. 함수 선언 (Function Declaration)
+// 2. 함수 표현식 (Function Expression)
+// --------------------------------------------------------------------------
+
+// 변수 선언
+
+// 함수 선언
+function look(who) {
+  console.log(who + "를(을) 보다");
+}
+// 함수 선언, 함수 표현식 그리고 호이스트 현상 비교
+
+// 보다('공무원님')
+// look('선생님')
+
+// var 보다 // [ undefined ]
+// console.log(보다) // undefined
+
+// 보다('형사님') // undefined() ❌
+
+// 함수 (표현)식
+// 자바스크립트는 함수를 값(value)으로 취급
+// let 변수 = 값 (할당)
+// let 보다 = 'see' // string
+// let 보다 = 1001 // number
+// let 보다 = true // boolean
+// let 변수 = 함수
+let 보다 = function (누구) {
+  console.log(누구 + "를(을) 보다");
+};
+
+// 함수 작성법은 2개 비교
+// 1. 함수 선언 (function 키워드로 시작, 호이스트 현상 ✅)
+// 2. 함수 표현식 (변수에 함수 값을 할당, JS는 함수를 값으로 취급 / 호이스트 현상 ❌)
+
+// let myFunction = function () {
+//   console.log('this is a mine function name')
+// }
+
+// myFunction()
+
+function logger(logMessage) {
+  console.log("로그 메시지: ", logMessage);
 }
 
-logger("실습을 통한 연습은 언제나 옳습니다");
+logger("실습을 통한 연습은 언제나 옳습니다. ☺️");
 
-// px 값을 rem 단위로 변환하는 함수 (기본 1rem = 16px)
+/* -------------------------------------------------------------------------- */
+/* PxToRem 함수                                                                 */
+/* -------------------------------------------------------------------------- */
+
+// 16px / 16px = 1rem
+// 32px / 16px = 2rem
+// 189px / 16px = ?rem
+
 function pxToRem(px) {
-  const baseSize = 16; // 기본 폰트 사이즈 (보통 브라우저 기본값)
-  const rem = px / baseSize;
-  return rem + "rem";
+  // let rem = px / 16 + 'rem'
+  // return rem
+  return px / 16 + "rem";
 }
 
-// 테스트 - 이미지에 나온 결과와 동일하게 나와야 함
-console.log(pxToRem(24)); // '1.5rem'
-console.log(pxToRem(16)); // '1rem'
-
-function remtopx(rem) {
-  let px = rem * 16;
-  return px + "px";
+function remToPx(rem) {
+  // let px = rem * 16 + 'px'
+  // return px
+  return rem * 16 + "px";
 }
-
-console.log(remtopx(1.5));
-console.log(remtopx(1));
