@@ -77,3 +77,26 @@ function writeDiary(year, month, day, location) {
 writeDiary(2025, 6, 10, "서울 N 타워");
 writeDiary(2025, 7, 1, "부산 광안리 해수욕장");
 writeDiary(2025, 10, 30, "원주 디자인 뮤지엄");
+
+let day = "11일";
+console.log(day);
+
+function 더하기(숫자1, 숫자2) {
+  console.log("콘솔패널에 출력된 계산 결과 = ", 숫자1 + 숫자2);
+  return 숫자1 + 숫자2;
+}
+let 결과값 = 더하기(10, 9);
+console.log("결과값 = ", 결과값);
+
+function 곱하기(숫자1, 숫자2) {
+  let 결과값 = 숫자1 * 숫자2; // 계산된 값
+  // console.log(결과값)
+  return 결과값;
+}
+
+function 화면에결과그리기() {
+  const 화면에그릴숫자값 = 곱하기(10, 20); // undefined
+  document.write(화면에그릴숫자값); // undefined -> 'undefined'
+}
+
+화면에결과그리기();
