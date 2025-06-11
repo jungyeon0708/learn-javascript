@@ -118,3 +118,64 @@ function remToPx(rem) {
   // return px
   return rem * 16 + "px";
 }
+
+function pizzaTotal(price, count) {
+  return price * count;
+}
+
+console.log(pizzaTotal(18000, 4));
+
+//주차요금계산
+const 주차요금계산 = function (주차시간) {
+  return 주차시간 * 1000 + "원";
+};
+
+console.log(주차요금계산(1.5));
+
+// 짝수인지 확인하는 함수
+function isEven(number) {
+  return number % 2 === 0;
+}
+
+// 테스트
+console.log(isEven(4)); // true (짝수)
+console.log(isEven(5)); // false (홀수)
+console.log(isEven(10)); // true (짝수)
+console.log(isEven(7)); // false (홀수)
+console.log(isEven(0)); // true (0은 짝수)
+console.log(isEven(1)); // false (홀수)
+
+// 자동 축하 메시지 생성기
+function makeCongratulationMessage(name) {
+  return "축하합니다, " + name + "님! 🎉 오늘도 화이팅하세요!";
+}
+
+// 테스트
+console.log(makeCongratulationMessage("철수"));
+console.log(makeCongratulationMessage("영희"));
+console.log(makeCongratulationMessage("민수"));
+
+//올해 남은 날짜 계산 함수
+function 올해남은날짜계산(현재날짜의일수) {
+  return 365 - 현재날짜의일수;
+}
+
+//세금 포함 가격 계산 함수 만들기
+function addVAT(price) {
+  return price * 1.1; // 원가격 × 1.1 = 부가세 포함 가격
+}
+
+console.log(addVAT(10000)); // 11000
+console.log(addVAT(25000)); // 27500
+
+// 성인 구역 입장 가능한지 확인하는 함수 (19세 이상)
+function canEnterAdultZone(age) {
+  return age >= 19;
+}
+
+// 테스트
+console.log(canEnterAdultZone(20)); // true (입장 가능)
+console.log(canEnterAdultZone(19)); // true (입장 가능)
+console.log(canEnterAdultZone(18)); // false (입장 불가)
+console.log(canEnterAdultZone(17)); // false (입장 불가)
+console.log(canEnterAdultZone(25)); // true (입장 가능)
