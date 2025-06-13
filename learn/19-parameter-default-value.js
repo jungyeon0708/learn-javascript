@@ -6,6 +6,11 @@ function getMoney(price, unit) {
   // unit 매개변수(옵션)
   // 설정 가능한 값: '달러' 또는 '원화'
   // 기본 값: '원'
+  if (unit === "$" || unit === "달러") {
+    return "$" + price;
+  } else {
+    return price + "원"; // 기본값은 원화
+  }
 }
 
 let moneyKR = getMoney(5000 + 2000 + 1500 + 500); // '10000원'
