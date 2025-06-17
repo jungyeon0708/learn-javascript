@@ -1,6 +1,7 @@
 const exorcists = document.getElementById("exorcist-characters");
 
 const choi = exorcists.querySelector(".master-choi");
+const villain = exorcists.querySelector("[data-type] .villain");
 // console.dir(choi.classList)
 
 // 오늘날 주로 사용하는 방법(NEW)
@@ -27,3 +28,5 @@ const choi = exorcists.querySelector(".master-choi");
   // x = x + 15
   // console.log(x) // 25
 }
+
+// classList 속성은 클래스 이름을 관리하는 데 유용한 메서드를 제공합니다.

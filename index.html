@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="icon" href="./images/ecmascript-logo.png" />
     <!-- JavaScript MIME 타입 (기본값: text/javascript) 생략 가능 -->
+    <script src="./script/utils/events.js"></script>
     <script>
-      // console.log(2025)
-      // console.log(6)
-      // console.log(10)
+      function handleToggle() {
+        console.log("toggle triggered");
+      }
     </script>
   </head>
   <body>
@@ -48,13 +49,124 @@
       <button type="submit">보내기</button>
     </form> -->
 
-    <ul id="exorcist-characters">
+    <!-- <ul id="exorcist-characters">
       <li class="character yo-han" data-type="hero">박요한</li>
       <li class="character master-choi" data-type="master">최강림</li>
       <li class="character villain-ghost" data-type="villain">악령</li>
     </ul>
 
+    <div id="demo">
+      <p class="add">단락에 "text-primary" 클래스 이름을 추가해 주세요!</p>
+      <script>
+        {
+          const element = document.getElementById("demo").querySelector(".add");
+
+          element.classList.add("text-primary");
+          console.log(element.classList.value);
+          console.log(element.classList.length);
+        }
+      </script>
+
+      <p class="remove">단락에서 "remove" 클래스 이름을 제거해 주세요!</p>
+      <script>
+        const demo = document.getElementById("demo");
+        const element = demo.querySelector(".remove");
+        console.log(element.classList.value);
+        element.classList.remove("remove");
+        console.log(element.classList.length);
+      </script>
+
+      <p class="contains1">
+        단락은 "text-primary" 클래스 이름을 가지고 있나요?
+      </p>
+      <script>
+        {
+          const result = document
+            .querySelector("#demo .contains1")
+            .classList.contains("text-primary");
+
+          if (result) {
+            console.log(
+              ".contains1 요소는 text-primary 클래스 이름을 가지고 있습니다."
+            );
+          } else {
+            console.log(
+              ".contains1 요소는 text-primary 클래스 이름을 가지고 있지 않습니다."
+            );
+          }
+        }
+      </script>
+      <p class="contains2 text-primary">
+        단락은 "text-primary" 클래스 이름을 가지고 있나요?
+      </p>
+      <script>
+        {
+          const result = document
+            .querySelector("#demo .contains2")
+            .classList.contains("text-primary");
+
+          if (result) {
+            console.log(
+              ".contains2 요소는 text-primary 클래스 이름을 가지고 있습니다."
+            );
+          } else {
+            console.log(
+              ".contains2 요소는 text-primary 클래스 이름을 가지고 있지 않습니다."
+            );
+          }
+        }
+      </script>
+
+      <p class="toggle">
+        단락은 "text-primary" 이름을 가지고 있나요? 있다면 삭제하고, 없다면
+        추가해 주세요.
+      </p>
+      <script>
+        // {
+        //   const element = document.querySelector("#demo .toggle");
+        //   console.log(element.classList.value);
+        //   element.classList.toggle("text-primary");
+        //   console.log(element.classList.value);
+        // }
+        {
+          const toggleElement = document.querySelector("#demo .toggle");
+          console.log(toggleElement.classList.value);
+
+          if (toggleElement.classList.contains("text-primary")) {
+            toggleElement.classList.remove("text-primary");
+          } else {
+            toggleElement.classList.add("text-primary");
+          }
+
+          console.log(toggleElement.classList.value);
+        }
+      </script>
+    </div> -->
+
     <!-- <script src="./learn/25-document-object.js"></script> -->
-    <script src="./learn/26-change-class-properties.js"></script>
+    <!-- <script src="./learn/26-change-class-properties.js"></script> -->
+    <!-- <button type="button" onclick="alert('toggle triggered')">
+      레거시 이벤트 모델을 사용하는 요소
+    </button>
+    <hr /> -->
+    <div role="group" style="display: flex; gap: 20px; flex-direction: column">
+      <button type="button" class="clickable button-1">
+        클릭 가능한 요소 1
+      </button>
+      <button type="button" class="clickable button-2">
+        클릭 가능한 요소 2
+      </button>
+      <button type="button" class="clickable button-3">
+        클릭 가능한 요소 3
+      </button>
+      <button type="button" class="clickable button-4">
+        클릭 가능한 요소 4
+      </button>
+      <button type="button" class="clickable button-5">
+        클릭 가능한 요소 5
+      </button>
+    </div>
+
+    <script src="./script/learn/29-custom-callback.js"></script>
   </body>
 </html>
