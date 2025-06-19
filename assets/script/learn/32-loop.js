@@ -175,3 +175,38 @@ for (let i = 0; i < students.length; i++) {
 for (let i = students.length - 1; i >= 0; i--) {
   console.log("역순 학생 이름:", students[i].이름);
 }
+
+// for...of 문 (배열, 문자열 등 반복 가능한 객체를 순회할 때 사용)
+{
+  const students = [
+    { 이름: "홍민영" },
+    { 이름: "윤정화" },
+    { 이름: "허시온" },
+    { 이름: "조선현" },
+    { 이름: "성정현" },
+    { 이름: "조장원" },
+  ];
+  for (const student of students) {
+    if (student.이름 === "허시온") continue; // 허시온을 건너뛰기
+    console.log("학생 이름:", student.이름);
+  }
+  for (const student of students) {
+    if (student.이름 === "조선현") break; // 조선현에서 반복문 종료
+    console.log("학생 이름:", student.이름);
+  }
+}
+
+// for...in 문 (객체의 속성을 순회할 때 사용)
+{
+  const student = {
+    이름: "홍민영",
+    나이: 25,
+    전공: "컴퓨터공학",
+  };
+  for (const key in student) {
+    console.log(`${key}: ${student[key]}`);
+  }
+}
+
+//for 문(객체에서 사용안함!!)
+//for...of문 (객체에서 사용안함!!)
