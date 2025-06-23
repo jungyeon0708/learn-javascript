@@ -26,3 +26,64 @@
   // console.log(navLinksArray.toReversed)
   // console.log(navLinksArray.filter)
 })();
+const paragraphs = document.querySelectorAll("p");
+// Loop (반복, 순환)
+// - while
+let i = 0,
+  l = paragraphs.length;
+while (i < l) {
+  const paragraphElement = paragraphs.item(i);
+  console.log(paragraphElement);
+  ++i;
+}
+
+// - do...while
+
+// - for
+for (let i = 0, l = paragraphs.length; i < l; ++i) {
+  const paragraphElement = paragraphs.item(i);
+  console.log(paragraphElement);
+}
+// - for...of
+for (const paragraphElement of paragraphs) {
+  console.log(paragraphElement);
+}
+
+// Nodelist.forEach
+paragraphs.forEach((item) => {
+  console.log(item);
+});
+
+/* eslint-disable no-unused-vars */
+// HTMLCollection vs. NodeList
+
+(() => {
+  console.group("DOM 업데이트 전");
+  // HTMLCollection (Live)
+  const paras = document.getElementsByTagName("p");
+  console.log("HTMLCollection(라이브 콜렉션: 살아있는 집합) =", paras.length);
+
+  const paraClasses = document.getElementsByClassName("para");
+  console.log(
+    "HTMLCollection(라이브 콜렉션: 살아있는 집합) =",
+    paraClasses.length
+  );
+
+  // NodeList
+  const paragraphs = document.querySelectorAll("p");
+  console.log("NodeList(스태틱 콜렉션: 고정된 집합)", paragraphs.length);
+  console.groupEnd();
+
+  // Update DOM
+  document.querySelector(".life-tips").innerHTML +=
+    "<p>씻지 않은 채소는 그대로 보관하시는 것이 좋습니다.</p>";
+
+  console.group("DOM 업데이트 후");
+  console.log("HTMLCollection(라이브 콜렉션: 살아있는 집합) =", paras.length);
+  console.log(
+    "HTMLCollection(라이브 콜렉션: 살아있는 집합) =",
+    paraClasses.length
+  );
+  console.log("NodeList(스태틱 콜렉션: 고정된 집합)", paragraphs.length);
+  console.groupEnd();
+})();
