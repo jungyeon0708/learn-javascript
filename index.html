@@ -9,12 +9,19 @@
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="icon" href="./assets/images/ecmascript-logo.png" />
     <!-- JavaScript MIME 타입 (기본값: text/javascript) 생략 가능 -->
-    <script src="./assets/script/utils/events.js"></script>
-    <script>
-      function handleToggle() {
-        console.log("toggle triggered");
+    <style>
+      h1 {
+        position: relative;
+        color: tan;
+
+        &::after {
+          content: " ❤️";
+          position: absolute;
+          top: -20px;
+          right: -50px;
+        }
       }
-    </script>
+    </style>
   </head>
   <body>
     <h1>JavaScript</h1>
@@ -25,7 +32,7 @@
       <div class="character" data-type="villain">다스 베이더</div>
     </div>
 
-    <script src="./assets/script/learn/36-practice.js"></script>
+    <script src="./assets/script/learn/37-read-css-style.js"></script>
     <nav>
       <ul>
         <li>

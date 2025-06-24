@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>계산된 스타일 읽기</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 100px;
+        background-color: #3498db;
+        color: white;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="box">스타일을 읽어보세요!</p>
+
+    <!-- 요소의 스타일을 getComputedStyle() 메서드로 읽어 콘솔 패널에 출력합니다. -->
+    <script>
+      // 요소 선택
+      const box = document.querySelector(".box");
+
+      // 계산된 스타일 읽기
+      const computedStyle = window.getComputedStyle(box);
+
+      // 스타일 정보 출력
+      console.log("배경색:", computedStyle.backgroundColor);
+      console.log("글자색:", computedStyle.color);
+      console.log("글자 크기:", computedStyle.fontSize);
+      console.log(computedStyle.getPropertyValue("width"));
+      console.log(computedStyle.getPropertyValue("height"));
+    </script>
+  </body>
+</html>

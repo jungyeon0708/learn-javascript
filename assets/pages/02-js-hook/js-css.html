@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>사용자 정의 CSS 속성 설정</title>
+    <style>
+      :root {
+        --theme-color: #0652dd;
+      }
+
+      .themed-box {
+        background-color: var(--theme-color);
+        color: #fff;
+        padding: 20px;
+        transition: background-color 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="themed-box">CSS 변수로 배경색을 설정했어요!</div>
+    <button type="button" class="change-theme-button">색상 변경</button>
+
+    <script>
+      const box = document.querySelector(".themed-box");
+      // .box 요소의 글자색을 변경합니다.
+      box.style.color = "#ffffff"; // 글자색을 흰색으로 변경
+      // .box 요소의 배경색을 변경합니다.
+      box.style.backgroundColor = "#0652dd"; // 배경색을 파란색으로 변경
+      // .box 요소의 너비를 변경합니다.
+      //   box.style.width = "300px"; // 너비를 300px로 설정
+      box.style.setProperty("width", "300px"); // 너비를 300px로 설정 (setProperty 사용 예시)
+      // .box 요소의 높이를 변경합니다.
+      box.style.setProperty("height", "200px"); // 높이를 200px로 설정 (setProperty 사용 예시)
+      // 버튼을 사용자가 클릭하면 .box 요소의 —-theme-color CSS 커스텀 속성을 변경합니다.
+      document
+        .querySelector(".change-theme-button")
+        .addEventListener("click", () => {
+          box.style.setProperty("--theme-color", "#dd066a");
+        });
+    </script>
+  </body>
+</html>

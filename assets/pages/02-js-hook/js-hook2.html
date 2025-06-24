@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Hook 실습</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notification jsNotification">📢 중요한 알림입니다!</div>
+
+    <button type="button" class="jsHideBtn">알림 숨기기</button>
+
+    <script>
+      // 1. JS 훅을 사용해 요소를 선택합니다.
+      const notification = document.querySelector(".jsNotification");
+      const hideBtn = document.querySelector(".jsHideBtn");
+      console.log(notification, hideBtn);
+      // 2. `"알림 숨기기"` 버튼을 사용자가 누르면 알림 내용이 감춰지도록 설정합니다.
+      document.querySelector(".jsHideBtn").addEventListener("click", () => {
+        notification.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
