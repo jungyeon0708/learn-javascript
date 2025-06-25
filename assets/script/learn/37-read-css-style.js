@@ -42,3 +42,26 @@
   // h1.style을 사용해 h1 요소의 글자 크기를 132px로 설정
   heading1.style.setProperty("--font-size", willUpdateFontSizeValue + "px");
 })();
+
+// CSS 가상(의사, 유사) 객체의 스타일 값 읽기
+(() => {
+  const heading1 = document.querySelector("h1");
+  const heading1PseudoElementStyles = getComputedStyle(heading1, "::after");
+  console.log(heading1PseudoElementStyles.content);
+  console.log(heading1PseudoElementStyles.position);
+  console.log(heading1PseudoElementStyles.right);
+  console.log(heading1PseudoElementStyles.top);
+  console.log(heading1PseudoElementStyles.display);
+  console.log(heading1PseudoElementStyles.zIndex);
+  console.log(heading1PseudoElementStyles.width);
+  console.log(heading1PseudoElementStyles.height);
+
+  // console.log(heading1PseudoElementStyles.getPropertyValue('content'))
+  // console.log(heading1PseudoElementStyles.getPropertyValue('position'))
+  // console.log(heading1PseudoElementStyles.getPropertyValue('right'))
+  // console.log(heading1PseudoElementStyles.getPropertyValue('top'))
+  // console.log(heading1PseudoElementStyles.getPropertyValue('display'))
+  // console.log(heading1PseudoElementStyles.getPropertyValue('z-index'))
+  // console.log(heading1PseudoElementStyles.getPropertyValue('width'))
+  // console.log(heading1PseudoElementStyles.getPropertyValue('height'))
+})();
