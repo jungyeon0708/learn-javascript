@@ -53,6 +53,17 @@ ol.appendChild(li);
   ramenStep.insertBefore(newStep, targetStep);
 })();
 
+//문서에 존재하는 요소를 목표 노드앞에 추가
+(() => {
+  const ramenCookingRecipe = document.querySelector(".ramen-cooking-recipe");
+  //삽입할 요소 찾기
+  const insertRecipe = ramenCookingRecipe.firstElementChild;
+  //대상 요소 찾기
+  const targetRecipe = ramenCookingRecipe.lastElementChild;
+  //insertRecipe를 targetRecipe 앞에 삽입
+  ramenCookingRecipe.insertBefore(insertRecipe, targetRecipe);
+})();
+
 //위치변경
 const button = document.querySelector("button");
 const section = button.nextElementSibling;
