@@ -17,6 +17,30 @@
 
   <body>
     <h1>JavaScript</h1>
+    <form action="/subscribe" method="POST">
+      <div>
+        <label for="email">이메일</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="user@example.com"
+          required
+        />
+      </div>
+      <div>
+        <label for="contents">콘텐츠</label>
+        <input
+          type="text"
+          name="contents"
+          id="contents"
+          placeholder="구독 메시지"
+          required
+        />
+      </div>
+      <button type="submit">구독</button>
+    </form>
+    <script></script>
 
     <main hidden>
       <ul class="members">
